@@ -10,7 +10,7 @@ export async function queryPackageJson(uri) {
 		})
 		return {
 			packageVersion: json.version,
-			packageModule: json.module || json.main
+			packageModule: json.exports ? json.exports['.'] : (json.module || json.main)
 		}
 	}
 	catch (error) {

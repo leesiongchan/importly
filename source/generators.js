@@ -19,6 +19,15 @@ export async function jsdelivr({name, version, packageModule, packageVersion, lo
 	return imports
 }
 
+export async function jspm({name, version, packageModule, packageVersion, lock}) {
+	const imports = {}
+	const v = lock ? packageVersion : version
+	const url = `https://ga.jspm.io/npm:${name}@${v}`
+	imports[`${name}/`] = `${url}/`
+	if (packageModule) imports[name] = resolve(url + "/", packageModule)
+	return imports
+}
+
 export async function node_modules({name, version, packageModule, packageVersion, lock}) {
 	const imports = {}
 	const url = `/node_modules/${name}`

@@ -14,8 +14,8 @@ async function main() {
 		const {
 			lock,
 			verbose,
-			host: generatorName = "jsdelivr",
-			lookup: resolverName = "jsdelivr"
+			host: generatorName = "jspm",
+			lookup: resolverName = "jspm"
 		} = argv
 		const resolver = resolvers[resolverName]
 		const generator = generators[generatorName]

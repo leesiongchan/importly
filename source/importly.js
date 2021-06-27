@@ -1,8 +1,8 @@
 
 import * as JSON5 from "json5"
 
-import {jsdelivr as defaultResolver} from "./resolvers.js"
-import {jsdelivr as defaultGenerator} from "./generators.js"
+import {jspm as defaultResolver} from "./resolvers.js"
+import {jspm as defaultGenerator} from "./generators.js"
 
 export async function importly({
 	input,
